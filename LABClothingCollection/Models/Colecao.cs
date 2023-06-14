@@ -18,14 +18,14 @@ namespace LABClothingCollection.Models
         public Usuario? Usuario { get; set; }
 
         [Required(ErrorMessage = "Nome da marca é obrigatório")]
-        public string Marca { get; set; }
+        public string? Marca { get; set; }
 
         [Required(ErrorMessage = "Orçamento é obrigatório")]
         public double? Orcamento { get; set; }
 
         [Required(ErrorMessage = "Data lançamento é obrigatório")]
         [DataType(DataType.Date)]
-        public DateOnly? DataLancamento { get; set; }
+        public DateTime? DataLancamento { get; set; }
 
         [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(Estacao))]
         public Estacao Estacao { get; set; }

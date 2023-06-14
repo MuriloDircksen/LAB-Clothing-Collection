@@ -12,21 +12,21 @@ namespace LABClothingCollection.Models
         public string? NomeCompleto { get; set; }
 
         [MaxLength(50, ErrorMessage = "Máximo de 50 caracteres")]
-        public string Genero { get; set; }
+        public string? Genero { get; set; }
 
         [Required(ErrorMessage ="Data nascimento e obrigatório")]
         [DataType(DataType.Date)]
-        public DateOnly? DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
 
         [Required]
         [MinLength(11, ErrorMessage = "Somente números, dando 11 caracteres")]
-        [MaxLength(13, ErrorMessage = "Somente números, dando 13 caracteres")]
+        [MaxLength(14, ErrorMessage = "Somente números, dando 14 caracteres")]
         public string? CpfOuCnpj { get; set; }
 
         
 
-        [StringLength(1, ErrorMessage = "Formato de dados 48999999999, total de 11 caracteres numéricos")]
-        public string Telefone { get; set; }
+        [StringLength(11, ErrorMessage = "Formato de dados 48999999999, total de 11 caracteres numéricos")]
+        public string? Telefone { get; set; }
 
     }
 }
