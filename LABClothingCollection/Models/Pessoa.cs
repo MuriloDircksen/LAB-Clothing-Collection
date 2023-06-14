@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LABClothingCollection.Models
 {
@@ -18,12 +19,11 @@ namespace LABClothingCollection.Models
         public DateOnly? DataNascimento { get; set; }
 
         [Required]
-        [StringLength(11, ErrorMessage = "Somente números, dando 11 caracteres")]
-        public string? Cpf { get; set; }
+        [MinLength(11, ErrorMessage = "Somente números, dando 11 caracteres")]
+        [MaxLength(13, ErrorMessage = "Somente números, dando 13 caracteres")]
+        public string? CpfOuCnpj { get; set; }
 
-        [Required]
-        [StringLength(13, ErrorMessage = "Somente números, dando 13 caracteres")]
-        public string? Cnpj { get; set; }
+        
 
         [StringLength(1, ErrorMessage = "Formato de dados 48999999999, total de 11 caracteres numéricos")]
         public string Telefone { get; set; }

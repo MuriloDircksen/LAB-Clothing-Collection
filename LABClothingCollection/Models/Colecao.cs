@@ -34,7 +34,7 @@ namespace LABClothingCollection.Models
         public StatusColecao Status { get; set; }
 
         [JsonIgnore]
-        public ICollection<Modelo> Modelo { get; set; }
+        public ICollection<Modelo>? Modelo { get; set; }
     }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]

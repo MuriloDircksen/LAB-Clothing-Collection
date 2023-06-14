@@ -6,7 +6,7 @@ namespace LABClothingCollection.Models
 {
     public class Usuario : Pessoa
     {
-        [Required(ErrorMessage ="Campo email obrigatório")]        
+        [Required(ErrorMessage ="Campo e-mail obrigatório")]        
         public string? Email { get; set; }
 
         [Required(ErrorMessage ="Campo requerido e deve seguir a lista de tipos possiveis"), EnumDataType(typeof(TipoUsuario))]
@@ -15,7 +15,7 @@ namespace LABClothingCollection.Models
         [Required(ErrorMessage = "Campo requerido e deve seguir a lista de tipos possiveis"), EnumDataType(typeof(StatusUsuario))]
         public StatusUsuario Status { get; set; }
         [JsonIgnore]
-        public ICollection<Colecao> Colecao { get; set; }
+        public ICollection<Colecao>? Colecao { get; set; }
     }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
