@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "imJAbI7vE9SKchdq+v1QkRbTdHlvjd/KlA/l02S3jOQHugqHrq+SRMGo7Di/TH9Qlaziof1o5lR5ustZsl58TQ==",
+  "dgSpecHash": "8ftghZtjM2I6eQkNRS3WDTVl4sOBKr3iu0iOo7cS304+xeXz2GUF3WeKTpwbNanKDHn8ps/Vi9i6rxbsAjx3aw==",
   "success": true,
-  "projectFilePath": "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\LABClothingCollection.csproj",
+  "projectFilePath": "D:\\LABClothingCollection\\LABClothingCollection.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\muril\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\muril\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

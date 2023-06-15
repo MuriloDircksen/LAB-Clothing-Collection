@@ -40,14 +40,12 @@ namespace LABClothingCollection.Controllers
             catch (Exception ex)
             {
                 return Conflict("CPF ou CNPJ já existe no banco de dados: " + ex.ToString());
-            }
-            
+            }            
 
         }
-
-        //HTTP PUT no path /api/usuarios/{identificador} com dto
+        
         [HttpPut]
-        [Route("/{id}")]
+        [Route("/api/usuarios/{id}")]
         public async Task<IActionResult> AtualizacaoDadosUsuario(
             [FromBody] UsuarioPutDTO usuarioDTO,
             [FromRoute] int id) 
@@ -72,7 +70,7 @@ namespace LABClothingCollection.Controllers
 
                 _contexto.Usuarios.Update(usuarioAtualizar);
                 await _contexto.SaveChangesAsync();
-                return Created($"api/usuarios/{usuario.Id}", usuarioAtualizar);
+                return Ok(usuarioAtualizar);
             }
             catch (Exception ex)
             {
@@ -80,9 +78,8 @@ namespace LABClothingCollection.Controllers
             }
         }
 
-        //HTTP PUT no path /api/usuario/{identificador}/status com dto do status
         [HttpPut]
-        [Route("/{id}/status")]
+        [Route("/api/usuarios/{id}/status")]
         public async Task<IActionResult> AtualizacaoStatusUsuario(
             [FromBody] UsuarioPutStatusDTO usuarioStatusDTO,
             [FromRoute] int id)
@@ -103,7 +100,7 @@ namespace LABClothingCollection.Controllers
 
                 _contexto.Usuarios.Update(usuarioAtualizar);
                 await _contexto.SaveChangesAsync();
-                return Created($"api/usuarios/{usuario.Id}", usuarioAtualizar);
+                return Ok(usuarioAtualizar);
             }
             catch (Exception ex)
             {
@@ -111,9 +108,8 @@ namespace LABClothingCollection.Controllers
             }
         }
 
-
-        //HTTP GET no path /api/usuarios com query param de filtro por status /api/usuarios?status=ATIVO
         [HttpGet]
+        [Route("/api/usuarios")]
         public async Task<IActionResult> ListagemUsuario(
             [FromQuery] StatusUsuario? status )
         {
@@ -132,10 +128,9 @@ namespace LABClothingCollection.Controllers
             }
 
         }
-
-        //HTTP GET no path /api/usuarios/{identificador}
+               
         [HttpGet]
-        [Route("/{id}")]
+        [Route("/api/usuarios/{id}")]
         public async Task<IActionResult> ListarUsuarioPorId(
             [FromRoute] int id)
         {

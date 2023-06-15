@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\LABClothingCollection.csproj": {}
+    "D:\\LABClothingCollection\\LABClothingCollection.csproj": {}
   },
   "projects": {
-    "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\LABClothingCollection.csproj": {
+    "D:\\LABClothingCollection\\LABClothingCollection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\LABClothingCollection.csproj",
+        "projectUniqueName": "D:\\LABClothingCollection\\LABClothingCollection.csproj",
         "projectName": "LABClothingCollection",
-        "projectPath": "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\LABClothingCollection.csproj",
+        "projectPath": "D:\\LABClothingCollection\\LABClothingCollection.csproj",
         "packagesPath": "C:\\Users\\muril\\.nuget\\packages\\",
-        "outputPath": "D:\\Murilo\\ws_visualstudio\\DevinHouseAudaces\\Projeto\\Módulo 2\\LABClothingCollection\\obj\\",
+        "outputPath": "D:\\LABClothingCollection\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

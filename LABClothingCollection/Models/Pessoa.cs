@@ -17,7 +17,7 @@ namespace LABClothingCollection.Models
         public string? Genero { get; set; }
 
         [Required(ErrorMessage ="Data nascimento e obrigatório")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime? DataNascimento { get; set; }
 
         [Required]
