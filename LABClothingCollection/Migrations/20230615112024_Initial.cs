@@ -44,8 +44,8 @@ namespace LABClothingCollection.Migrations
                     Marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Orcamento = table.Column<double>(type: "float", nullable: false),
                     DataLancamento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Estacao = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    Estacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -66,8 +66,8 @@ namespace LABClothingCollection.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeModelo = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     IdColecao = table.Column<int>(type: "int", nullable: false),
-                    Tipo = table.Column<int>(type: "int", nullable: false),
-                    Layout = table.Column<int>(type: "int", nullable: false)
+                    Tipo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Layout = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -98,9 +98,27 @@ namespace LABClothingCollection.Migrations
                 column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Colecoes_NomeColecao",
+                table: "Colecoes",
+                column: "NomeColecao",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Modelos_IdColecao",
                 table: "Modelos",
                 column: "IdColecao");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Modelos_NomeModelo",
+                table: "Modelos",
+                column: "NomeModelo",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_CpfOuCnpj",
+                table: "Usuarios",
+                column: "CpfOuCnpj",
+                unique: true);
         }
 
         /// <inheritdoc />

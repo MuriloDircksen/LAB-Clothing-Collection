@@ -32,6 +32,22 @@ namespace LABClothingCollection.Contexto
             .Property(u => u.TipoUsuario)
             .HasConversion<string>();
 
+            modelBuilder.Entity<Colecao>()
+            .Property(u => u.Estacao)
+            .HasConversion<string>();
+
+            modelBuilder.Entity<Colecao>()
+            .Property(u => u.Status)
+            .HasConversion<string>();
+
+            modelBuilder.Entity<Modelo>()
+            .Property(u => u.Layout)
+            .HasConversion<string>();
+
+            modelBuilder.Entity<Modelo>()
+            .Property(u => u.Tipo)
+            .HasConversion<string>();
+
             modelBuilder.Entity<Usuario>().HasData(
                     new Usuario
                     {

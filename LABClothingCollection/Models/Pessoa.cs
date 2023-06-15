@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace LABClothingCollection.Models
 {
+    [Index(nameof(CpfOuCnpj), IsUnique = true)]
     public class Pessoa
     {
         public int Id { get; set; }

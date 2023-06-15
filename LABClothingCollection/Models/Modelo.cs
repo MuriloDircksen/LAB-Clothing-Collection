@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace LABClothingCollection.Models
 {
+    [Index(nameof(NomeModelo), IsUnique = true)]
     public class Modelo
     {
         public int Id { get; set; }

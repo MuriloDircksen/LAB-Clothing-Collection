@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LABClothingCollection.Migrations
 {
     [DbContext(typeof(LabClothingCollectionContexto))]
-    [Migration("20230614142801_Initial")]
+    [Migration("20230615112024_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -37,8 +37,9 @@ namespace LABClothingCollection.Migrations
                         .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Estacao")
-                        .HasColumnType("int");
+                    b.Property<string>("Estacao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdUsuario")
                         .HasColumnType("int");
@@ -56,12 +57,16 @@ namespace LABClothingCollection.Migrations
                         .IsRequired()
                         .HasColumnType("float");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdUsuario");
+
+                    b.HasIndex("NomeColecao")
+                        .IsUnique();
 
                     b.ToTable("Colecoes");
                 });
@@ -77,20 +82,25 @@ namespace LABClothingCollection.Migrations
                     b.Property<int>("IdColecao")
                         .HasColumnType("int");
 
-                    b.Property<int>("Layout")
-                        .HasColumnType("int");
+                    b.Property<string>("Layout")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeModelo")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("Tipo")
-                        .HasColumnType("int");
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdColecao");
+
+                    b.HasIndex("NomeModelo")
+                        .IsUnique();
 
                     b.ToTable("Modelos");
                 });
@@ -138,6 +148,9 @@ namespace LABClothingCollection.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CpfOuCnpj")
+                        .IsUnique();
 
                     b.ToTable("Usuarios");
 
