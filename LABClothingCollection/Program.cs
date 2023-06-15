@@ -23,7 +23,7 @@ namespace LABClothingCollection
                                 options.UseSqlServer(
                                     builder.Configuration.GetConnectionString("ServerConnection")));
 
-
+            
             builder.Services.AddControllers().AddNewtonsoftJson(
                 x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
