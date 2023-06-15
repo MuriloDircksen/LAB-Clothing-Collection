@@ -60,7 +60,7 @@ namespace LABClothingCollection.Controllers
             }
             var configuration = new MapperConfiguration(cfg => cfg.CreateMap<ColecaoPutDTO, Colecao>());
             var mapper = configuration.CreateMapper();
-           Colecao colecao = mapper.Map<Colecao>(colecaoDTO);
+            Colecao colecao = mapper.Map<Colecao>(colecaoDTO);
             var colecaoDB = await _contexto.Colecoes.FirstOrDefaultAsync(x => x.Id == id);
            
             if(colecaoDB == null) return NotFound("Coleção não encontrada");
@@ -72,7 +72,7 @@ namespace LABClothingCollection.Controllers
                 colecaoDB.Orcamento = colecao.Orcamento;
                 colecaoDB.DataLancamento = colecao.DataLancamento;
                 colecaoDB.Estacao = colecao.Estacao;
-                colecaoDB.Status = colecao.Status;
+                
                 _contexto.Colecoes.Update(colecaoDB);
                 await _contexto.SaveChangesAsync();
 
@@ -160,7 +160,7 @@ namespace LABClothingCollection.Controllers
 
             if (colecao.Status == StatusColecao.ATIVO) return BadRequest("Não pode deletar coleção ativa");
 
-            if(colecao.Modelo != null) return BadRequest("Não pode deletar coleção com modelos associados");
+            if( colecao.Modelo.FirstOrDefault() != null) return BadRequest("Não pode deletar coleção com modelos associados");
 
             try
             {

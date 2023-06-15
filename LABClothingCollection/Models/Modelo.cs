@@ -16,6 +16,7 @@ namespace LABClothingCollection.Models
 
         [ForeignKey("Colecao")]
         public virtual int IdColecao { get; set; }
+        [JsonIgnore]
         public Colecao? Colecao { get; set; }
 
         [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(Tipo))]

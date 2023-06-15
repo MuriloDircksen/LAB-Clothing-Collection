@@ -23,7 +23,6 @@ namespace LABClothingCollection.DTO.Request_DTO
         [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(Estacao))]
         public Estacao Estacao { get; set; }
 
-        [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(StatusColecao))]
-        public StatusColecao Status { get; set; }
+        
     }
 }

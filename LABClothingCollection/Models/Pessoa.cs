@@ -27,7 +27,8 @@ namespace LABClothingCollection.Models
 
         
 
-        [StringLength(11, ErrorMessage = "Formato de dados 48999999999, total de 11 caracteres numéricos")]
+        [MaxLength(13, ErrorMessage = "Formato de dados 5548999999999, total de 11 caracteres numéricos")]
+        [MinLength(11, ErrorMessage = "Formato de dados 48999999999, total de 11 caracteres numéricos")]
         public string? Telefone { get; set; }
 
     }
