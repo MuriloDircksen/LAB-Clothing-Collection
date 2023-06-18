@@ -29,7 +29,7 @@ namespace LABClothingCollection.Models
         [Required(ErrorMessage = "Data lançamento é obrigatório")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime? DataLancamento { get; set; }
+        public DateTime DataLancamento { get; set; }
 
         [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(Estacao))]
         public Estacao Estacao { get; set; }

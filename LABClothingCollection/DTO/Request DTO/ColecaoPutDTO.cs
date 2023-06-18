@@ -1,5 +1,7 @@
 ﻿using LABClothingCollection.Models;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace LABClothingCollection.DTO.Request_DTO
 {
@@ -10,6 +12,8 @@ namespace LABClothingCollection.DTO.Request_DTO
         [MinLength(10, ErrorMessage = "Minimo de 10 caracteres")]
         public string NomeColecao { get; set; }
         [Required(ErrorMessage = "Nome da marca é obrigatório")]
+        [ForeignKey("Usuario")]
+        public virtual int IdUsuario { get; set; }
         public string? Marca { get; set; }
 
         [Required(ErrorMessage = "Orçamento é obrigatório")]
@@ -18,7 +22,7 @@ namespace LABClothingCollection.DTO.Request_DTO
         [Required(ErrorMessage = "Data lançamento é obrigatório")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime? DataLancamento { get; set; }
+        public DateTime DataLancamento { get; set; }
 
         [Required(ErrorMessage = "Campo requerido "), EnumDataType(typeof(Estacao))]
         public Estacao Estacao { get; set; }

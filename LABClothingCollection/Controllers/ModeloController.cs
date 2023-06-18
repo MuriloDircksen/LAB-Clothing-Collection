@@ -16,8 +16,6 @@ namespace LABClothingCollection.Controllers
             _contexto = contexto;
         }
 
-        //HTTP POST no path /api/modelos
-
         [HttpPost]
         [Route("/api/modelos")]
         public async Task<IActionResult> CadastroModelo(
@@ -67,6 +65,7 @@ namespace LABClothingCollection.Controllers
             try
             {
                 modeloDB.NomeModelo = modelo.NomeModelo;
+                modeloDB.IdColecao = modelo.IdColecao;
                 modeloDB.Tipo = modelo.Tipo;
                 modeloDB.Layout = modelo.Layout;
                 _contexto.Modelos.Update(modeloDB);
@@ -75,11 +74,10 @@ namespace LABClothingCollection.Controllers
             }
             catch (Exception ex)
             {
-                return Conflict("Nome do modelo já existe no banco de dados: " + ex.ToString());
+                return BadRequest("Dados inválidos: " + ex.ToString());
             }
         }
 
-        //HTTP GET no path /api/modelos
         [HttpGet]
         [Route("/api/modelos")]
         public async Task<IActionResult> ListagemModelos(
@@ -98,10 +96,8 @@ namespace LABClothingCollection.Controllers
             {
                 return BadRequest("Dados inválidos, favor verificar o formato obrigatório dos dados!");
             }
-
         }
 
-        //HTTP GET no path /api/modelos/{identificador}
         [HttpGet]
         [Route("/api/modelos/{id}")]
         public async Task<IActionResult> ListarModeloPorId(
@@ -112,7 +108,6 @@ namespace LABClothingCollection.Controllers
             return modelo == null ? NotFound("Modelo não encontrado!") : Ok(modelo);
         }
 
-        //HTTP DELETE no path /api/modelos/{identificador}
         [HttpDelete]
         [Route("/api/modelos/{id}")]
         public async Task<IActionResult> ExclusaoModelo(

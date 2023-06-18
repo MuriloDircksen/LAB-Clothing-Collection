@@ -19,7 +19,6 @@ namespace LABClothingCollection.Controllers
             _contexto = contexto;
         }
 
-        //HTTP POST no path /api/colecoes
         [HttpPost]
         [Route("/api/colecoes")]
         public async Task<IActionResult> CadastroColecao(
@@ -36,7 +35,6 @@ namespace LABClothingCollection.Controllers
 
             try
             {
-                colecao.IdUsuario = usuario.Id;
                 await _contexto.Colecoes.AddAsync(colecao);
                 await _contexto.SaveChangesAsync();
                 return Created($"api/usuarios/{colecao.Id}", colecao);
@@ -47,7 +45,6 @@ namespace LABClothingCollection.Controllers
             }
         }
 
-        //HTTP PUT no path /api/colecoes/{identificador}
         [HttpPut]
         [Route("/api/colecoes/{id}")]
         public async Task<IActionResult> AtualizacaoDadosColecao(
@@ -68,6 +65,7 @@ namespace LABClothingCollection.Controllers
             try
             {
                 colecaoDB.NomeColecao = colecao.NomeColecao;
+                colecaoDB.IdUsuario = colecao.IdUsuario;
                 colecaoDB.Marca = colecao.Marca;
                 colecaoDB.Orcamento = colecao.Orcamento;
                 colecaoDB.DataLancamento = colecao.DataLancamento;

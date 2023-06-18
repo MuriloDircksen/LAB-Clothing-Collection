@@ -29,7 +29,7 @@ namespace LABClothingCollection.Controllers
             {
                 return BadRequest("Dados inválidos, favor verificar o formato obrigatório dos dados!");  
             }
-            
+            if (usuario.CpfOuCnpj.Length > 11 || usuario.CpfOuCnpj.Length < 14) return BadRequest("Deve possuir 11 caracteres para cpf ou 14 para cnpj!");
 
             try
             {
@@ -104,7 +104,7 @@ namespace LABClothingCollection.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.ToString());
+                return BadRequest("Dados inválidos: "+ex.ToString());
             }
         }
 

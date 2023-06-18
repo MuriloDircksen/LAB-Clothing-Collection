@@ -259,10 +259,6 @@ D:\Murilo\ws_visualstudio\DevinHouseAudaces\Projeto\Módulo 2\LABClothingCollect
 D:\LABClothingCollection\bin\Debug\net7.0\appsettings.Development.json
 D:\LABClothingCollection\bin\Debug\net7.0\appsettings.json
 D:\LABClothingCollection\bin\Debug\net7.0\LABClothingCollection.exe
-D:\LABClothingCollection\bin\Debug\net7.0\LABClothingCollection.deps.json
-D:\LABClothingCollection\bin\Debug\net7.0\LABClothingCollection.runtimeconfig.json
-D:\LABClothingCollection\bin\Debug\net7.0\LABClothingCollection.dll
-D:\LABClothingCollection\bin\Debug\net7.0\LABClothingCollection.pdb
 D:\LABClothingCollection\bin\Debug\net7.0\AutoMapper.dll
 D:\LABClothingCollection\bin\Debug\net7.0\Azure.Core.dll
 D:\LABClothingCollection\bin\Debug\net7.0\Azure.Identity.dll
@@ -512,5 +508,3 @@ D:\LABClothingCollection\obj\Debug\net7.0\LABClothingCollection.csproj.CopyCompl
 D:\LABClothingCollection\obj\Debug\net7.0\LABClothingCollection.dll
 D:\LABClothingCollection\obj\Debug\net7.0\refint\LABClothingCollection.dll
 D:\LABClothingCollection\obj\Debug\net7.0\LABClothingCollection.pdb
-D:\LABClothingCollection\obj\Debug\net7.0\LABClothingCollection.genruntimeconfig.cache
-D:\LABClothingCollection\obj\Debug\net7.0\ref\LABClothingCollection.dll
