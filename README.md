@@ -29,8 +29,8 @@ Projeto desenvolvido utilizando Visual Studio 22, .net 7.0, e sql server 19, par
 [
   {
     "email": "pedro.henrique.monteiro@serteccontabil.com.br",
-    "tipoUsuario": 1,
-    "status": 1,
+    "tipoUsuario": "ADMINISTRADOR",
+    "status": "ATIVO",
     "id": 1,
     "nomeCompleto": "Pedro Henrique Danilo Monteiro",
     "genero": "Masculino",
@@ -44,14 +44,14 @@ Projeto desenvolvido utilizando Visual Studio 22, .net 7.0, e sql server 19, par
                   "marca": "string",
                   "orcamento": 10,
                   "dataLancamento": "2023-06-15T00:00:00",
-                  "estacao": 1,
-                  "status": 1,
+                  "estacao": "OUTONO",
+                  "status": "ATIVO",
                   "modelo": {
                               "id": 4,
                               "nomeModelo": "string",
                               "idColecao": 5,
-                              "tipo": 1,
-                              "layout": 1
+                              "tipo": "BERMUDA",
+                              "layout": "BORDADO"
                             }
                 }
   }
