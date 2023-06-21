@@ -5,7 +5,7 @@ Projeto desenvolvido utilizando Visual Studio 22, .net 7.0, e sql server 19, par
 ## Ferramentas e requisitos necessárias para rodar o projeto
 - Visual Studio 22
 - Sql server express 19
-- SDK 7.0
+- net 7.0
 - Pacote AutoMapper 12.0.1
 - Pacote Microsoft.AspNetCore.Mvc.NewtonsoftJson 7.0.5
 - Pacote Microsoft.AspNetCore.OpenApi 7.0.5
